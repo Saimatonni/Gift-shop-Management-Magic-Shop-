@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import {domain} from "../env"
+import SingleProduct from './SingleProduct'
 
 const ProductDetails = () => {
    const {id} = useParams()
    const [product, setProduct] = useState(null)
+   const [categoryproduct, setCategoryproduct] = useState(null)
    useEffect(() => {
    const getdata = async()=>{
       await Axios({
@@ -16,10 +18,23 @@ const ProductDetails = () => {
         //setProducts(res.data)
         console.log(response.data);
         setProduct(response.data)
+        getcategory(response?.data?.category["id"])
     })
    }
    getdata()
-}, [])
+}, [id])
+
+   const getcategory = async(id) =>{
+      await Axios({
+         method : 'get',
+         url:`${domain}/api/category/${id}/`
+      }).then(response=>{
+        console.log(response.data);
+        setCategoryproduct(response.data)
+      })
+   }
+   
+
   return (
     <div className="container">
        {
@@ -40,6 +55,17 @@ const ProductDetails = () => {
             </>
         )
        }
+       <div className="row">
+                <h1>Related Products</h1>
+                {
+                    categoryproduct !== null &&
+                    categoryproduct[0]?.category_product?.map((product, i) => (
+                        <div className="col-md-3 mt-2" key={i}>
+                            <SingleProduct item={product} />
+                        </div>
+                    ))
+                }
+            </div>
     </div>
   )
 }

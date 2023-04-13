@@ -6,6 +6,7 @@ import SingleProduct from './SingleProduct'
 
 const HomePage = () => {
     const [products, setProducts] = useState(null);
+    const [categoris, setCategoris] = useState(null)
     useEffect(() => {
         const getdata = async () => {
             await Axios({
@@ -18,6 +19,19 @@ const HomePage = () => {
             })
         }
         getdata()
+    }, [])
+
+    useEffect(() => {
+        const getcategory = async () => {
+            await Axios({
+                method: "get",
+                url: `${domain}/api/category/`
+            }).then(response => {
+                 console.log(response.data);
+                setCategoris(response.data)
+            })
+        }
+        getcategory()
     }, [])
 
     const nextpage = async () => {
@@ -76,6 +90,16 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="col-md-3 mt-3">
+                    <h1>All Categoris</h1>
+                    {
+                        categoris?.map((cata, i) => (
+                            <div className="p-2 m-2" key={i}>
+                                 <Link to={`/category/${cata?.id}`} className="btn btn-success">{cata.title}</Link>
+                            </div>
+                        ))
+                    }
                 </div>
                 <div className="col-md-3 bg-dark"></div>
             </div>
