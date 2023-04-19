@@ -80,7 +80,7 @@ const HomePage = () => {
                             </div>
                             <div>
                             {
-                                products?.previous !== null ?(
+                                products?.next !== null ?(
                                     <button onClick={nextpage} className="btn btn-lg btn-success">Next</button> 
                                 ):(
                                     <button className="btn btn-lg btn-success" disabled>Next</button>  
@@ -91,7 +91,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-3 mt-3">
+                <div className="col-md-2 mt-3">
                     <h1>All Categoris</h1>
                     {
                         categoris?.map((cata, i) => (

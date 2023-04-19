@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom'
 import { useGlobalState } from '../state/provider'
 
 const Navbar = () => {
-  const [{ profile }, { }] = useGlobalState()
-  //console.log(profile, "$$this is navbar profile")
+  const [{ profile, cartproductf_uncomplit }, { }] = useGlobalState()
+ // console.log(cartproductf_uncomplit, "$$$444uncomplit cart");
+  let cart_product_length = 0;
+  if (cartproductf_uncomplit !== null) {
+    cart_product_length=cartproductf_uncomplit?.cartproduct?.length
+  } else {
+    cart_product_length = 0;
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">Magic Shop</Link>
@@ -17,6 +24,12 @@ const Navbar = () => {
             profile !== null ?
               (
                 <>
+                  <li class="nav-item">
+                    <Link to="/cart" class="btn btn-dark">
+                      <i class="fas fa-cart-plus"></i>
+                      <span>({cart_product_length})</span>
+                    </Link>
+                  </li>
                   <li className="nav-item active">
                     <Link className="nav-link" to="/profile">Profile</Link>
                   </li>
