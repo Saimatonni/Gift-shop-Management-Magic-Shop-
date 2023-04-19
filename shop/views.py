@@ -46,3 +46,54 @@ class ProfileView(views.APIView):
         except:
             response_message = {"error":True,"message":"Somthing is Wrong"}
         return Response(response_message)
+    
+class UserDataUpdate(views.APIView):
+    permission_classes=[IsAuthenticated, ]
+    authentication_classes=[TokenAuthentication, ]
+    def post(self,request):
+        try:
+            user = request.user
+            data = request.data
+            user_obj = User.objects.get(username=user)
+            user_obj.first_name = data["first_name"]
+            user_obj.last_name = data["last_name"]
+            user_obj.email = data["email"]
+            user_obj.save()
+            response_data = {"error":False,"message":"User Data is Updated"}
+        except:
+            response_data = {"error":True,"message":"User Data is not Update Try again !"}
+        return Response(response_data)
+    
+
+class Updateprofile(views.APIView):
+    permission_classes=[IsAuthenticated, ]
+    authentication_classes=[TokenAuthentication, ]
+    def post(self,request):
+        try:
+            user = request.user
+            query = Profile.objects.get(prouser=user)
+            data = request.data
+            serializers = ProfileSerializers(query,data=data,context={"request":request})
+            serializers.is_valid(raise_exception=True)
+            serializers.save()
+            return_res={"message":"Profile is Updated"}
+        except:
+            return_res={"message":"Somthing is Wrong Try Agane !"}
+        return Response(return_res)
+    
+
+class MyCart(viewsets.ViewSet):
+    authentication_classes=[TokenAuthentication, ]
+    permission_classes = [IsAuthenticated, ]
+    
+    def list(self,request):
+        query = Cart.objects.filter(customer=request.user.profile)
+        serializers = CartSerializer(query,many=True)
+        all_data=[]
+        for cart in serializers.data:
+            cart_product = CartProduct.objects.filter(cart=cart["id"])
+            cart_product_serializer = CartProductSerializer(cart_product,many=True)
+            cart["cartproduct"] = cart_product_serializer.data
+            all_data.append(cart)
+        return Response(all_data)
+        
