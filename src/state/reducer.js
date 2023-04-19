@@ -1,5 +1,8 @@
 export const initialstate = {
     profile: null,
+    reloadpage: null,
+    cartproduct_complit: null,
+    cartproductf_uncomplit: null,
 }
 
 const reducer = (state, action) => {
@@ -10,6 +13,21 @@ const reducer = (state, action) => {
                 ...state,
                 profile: action.profile,
             };
+        case "ADD_CARTPRODUCT_COMPLIT":
+            return {
+                ...state,
+                cartproduct_complit: action.cartproduct_complit
+            }
+        case "ADD_CARTPRODUCT_UNCOMPLIT":
+            return {
+                ...state,
+                cartproductf_uncomplit: action.cartproductf_uncomplit
+            }
+        case "ADD_RELOADPAGE_DATA":
+            return {
+                ...state,
+                reloadpage: action.reloadpage
+            }
         default:
             return state;
     }
