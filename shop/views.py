@@ -96,4 +96,32 @@ class MyCart(viewsets.ViewSet):
             cart["cartproduct"] = cart_product_serializer.data
             all_data.append(cart)
         return Response(all_data)
-        
+    
+class OldOrders(viewsets.ViewSet):
+    authentication_classes=[TokenAuthentication, ]
+    permission_classes = [IsAuthenticated, ]
+    def list(self,request):
+        query = Order.objects.filter(cart__customer = request.user.profile)
+        serializers = OrderSerializer(query,many=True)
+        all_data = []
+        for order in serializers.data:
+            cartproduct = CartProduct.objects.filter(cart_id=order['cart']['id'])
+            cartproduct_serializer = CartProductSerializer(cartproduct,many=True)
+            order['cartproduct'] = cartproduct_serializer.data
+            all_data.append(order)
+        return Response(all_data)
+    def retrieve(self,request,pk=None):
+        try:
+            queryset = Order.objects.get(id=pk)
+            serializers = OrderSerializer(queryset)
+            data = serializers.data
+            all_date=[]
+            cartproduct = CartProduct.objects.filter(cart_id=data['cart']['id'])
+            cartproduct_serializer = CartProductSerializer(cartproduct,many=True)
+            data['cartproduct'] = cartproduct_serializer.data
+            all_date.append(data)
+            response_message = {"error":False,"data":all_date}
+        except:
+            response_message = {"error":True,"data":"No data Found for This id"}
+
+        return Response(response_message)
