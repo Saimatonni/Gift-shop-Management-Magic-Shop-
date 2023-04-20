@@ -34,17 +34,43 @@ const Cart = () => {
                                         <td>{data.price}</td>
                                         <td>{data.quantity}</td>
                                         <td>{data.subtotal}</td>
-
+                                        <td>
+                                            <button className="btn btn-info">-</button>
+                                            <button className="btn btn-danger mx-1">X</button>
+                                            <button className="btn btn-success">+</button>
+                                        </td>
                                     </tr>
                                 ))
                             }
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colSpan="4" className="text-right" >Total</th>
+                                <th>{cartproductf_uncomplit?.total}</th>
+                                <th>
+                                    <Link to="/order" className="btn btn-success" >OrderNow</Link>
+                                </th>
+                            </tr>
+                        </tfoot>
                     </table>
                     :
                     <div>
                         <h1>Thare is no Card Go home and add some Product</h1>
                     </div>
             }
+            <div className="row">
+                <div className="col">
+                    <Link to="/oldorders" className="btn btn-warning" >Old Orders</Link>
+                </div>
+                {
+                    cart_productt_length !== 0 &&
+                    <>
+                        <div className="col">
+                            <Link className="btn btn-danger" >Delate Card</Link>
+                        </div>
+                    </>
+                }
+            </div>
         </div>
     )
 }
