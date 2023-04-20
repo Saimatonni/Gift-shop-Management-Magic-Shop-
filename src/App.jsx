@@ -11,6 +11,9 @@ import RegisterPage from './components/RegisterPage'
 import { domain, header, usertoken } from './env'
 import { useGlobalState } from './state/provider'
 import Cart from './components/Cart'
+import Oladorders from './components/Oladorders'
+import Order from './components/Order'
+import OrderDetails from './components/OrderDetails'
 
 const App = () => {
   //console.log(usertoken,"User token");
@@ -83,6 +86,9 @@ const App = () => {
             <>
               <Route exact path='/profile' component={Profilepage} />
               <Route exact path='/cart' component={Cart} />
+              <Route exact path='/oldorders' component={Oladorders} />
+              <Route exact path='/order' component={Order} />
+              <Route exact path='/orderdetails/:id' component={OrderDetails} />
             </>
           ) :
             (
