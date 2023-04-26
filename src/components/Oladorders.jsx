@@ -5,6 +5,7 @@ import { domain, header } from '../env'
 
 const Oladorders = () => {
     const [orders, setOrders] = useState(null)
+    const [reload, setReload] = useState(null);
     useEffect(() => {
         const getorder = async () => {
             await Axios({
@@ -17,7 +18,19 @@ const Oladorders = () => {
             })
         }
         getorder()
-    }, [])
+    }, [reload])
+
+    const delateorderhistory = async (id) => {
+        await Axios({
+            method: "delete",
+            url: `${domain}/api/orders/${id}/`,
+            headers:header
+        }).then((res) => {
+            // console.log(res.data);
+            setReload(res.data)
+        })
+    }
+
     return (
         <div className="container">
             <h1>Orders History</h1>
@@ -42,7 +55,7 @@ const Oladorders = () => {
                                     <td>{order?.cartproduct?.length}</td>
                                     <td>{order?.order_status}</td>
                                     <td><Link to={`/orderdetails/${order?.id}`}className="btn btn-success">Details</Link></td>
-                                    <td><p className="btn btn-danger">Delete</p></td>
+                                    <td><p onClick={() => delateorderhistory(order.id)} className="btn btn-danger">Delete</p></td>
                                 </tr>
                             )) :
                             (

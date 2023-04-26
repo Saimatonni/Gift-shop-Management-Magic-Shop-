@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
-import { domain } from '../env';
+import { domain, header } from '../env';
 import { useGlobalState } from '../state/provider';
 
 const Cart = () => {
@@ -12,6 +12,76 @@ const Cart = () => {
     } else {
         cart_productt_length = 0;
     }
+
+    const history = useHistory()
+    const updatecartproduct = async (id) => {
+        await Axios({
+            method: 'post',
+            url: `${domain}/api/updatecartproduct/`,
+            headers: header,
+            data: { "id": id }
+        }).then(response => {
+            // console.log(response);
+            dispatch({
+                type: "ADD_RELOADPAGE_DATA",
+                reloadpage: response
+            })
+        })
+    }
+
+
+    const editcartproduct = async (id) => {
+        await Axios({
+            method: 'post',
+            url: `${domain}/api/editcartproduct/`,
+            headers: header,
+            data: { "id": id }
+        }).then(response => {
+            // console.log(response);
+            dispatch({
+                type: "ADD_RELOADPAGE_DATA",
+                reloadpage: response
+            })
+        })
+    }
+    const delatecartproduct = async (id) => {
+        await Axios({
+            method: 'post',
+            url: `${domain}/api/delatecartproduct/`,
+            headers: header,
+            data: { "id": id }
+        }).then(response => {
+            // console.log(response);
+            dispatch({
+                type: "ADD_RELOADPAGE_DATA",
+                reloadpage: response
+            })
+        })
+    }
+
+    const delatefullcard = async (id) => {
+        await Axios({
+            method: 'post',
+            url: `${domain}/api/delatefullcart/`,
+            headers:header,
+            data: { "id": id }
+        }).then(response => {
+            // console.log(response);
+            dispatch({
+                type: "ADD_RELOADPAGE_DATA",
+                reloadpage: response
+            })
+            dispatch({
+                type: "ADD_CARTPRODUCT_UNCOMPLIT",
+                cartproductf_uncomplit: null
+            })
+            alert("Full Cart is Delated")
+            history.push('/')
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className="container p-3">
             {
@@ -35,9 +105,9 @@ const Cart = () => {
                                         <td>{data.quantity}</td>
                                         <td>{data.subtotal}</td>
                                         <td>
-                                            <button className="btn btn-info">-</button>
-                                            <button className="btn btn-danger mx-1">X</button>
-                                            <button className="btn btn-success">+</button>
+                                            <button onClick={() => editcartproduct(data.id)} className="btn btn-info">-</button>
+                                            <button onClick={() => delatecartproduct(data.id)} className="btn btn-danger mx-1">X</button>
+                                            <button onClick={() => updatecartproduct(data.id)} className="btn btn-success">+</button>
                                         </td>
                                     </tr>
                                 ))
@@ -66,7 +136,7 @@ const Cart = () => {
                     cart_productt_length !== 0 &&
                     <>
                         <div className="col">
-                            <Link className="btn btn-danger" >Delate Card</Link>
+                            <Link onClick={() => delatefullcard(cartproductf_uncomplit.id)} className="btn btn-danger" >Delate Card</Link>
                         </div>
                     </>
                 }

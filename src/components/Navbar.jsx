@@ -3,14 +3,24 @@ import { Link } from 'react-router-dom'
 import { useGlobalState } from '../state/provider'
 
 const Navbar = () => {
-  const [{ profile, cartproductf_uncomplit }, { }] = useGlobalState()
- // console.log(cartproductf_uncomplit, "$$$444uncomplit cart");
+  const [{ profile, cartproductf_uncomplit }, dispatch] = useGlobalState()
+  // console.log(cartproductf_uncomplit, "$$$444uncomplit cart");
   let cart_product_length = 0;
   if (cartproductf_uncomplit !== null) {
-    cart_product_length=cartproductf_uncomplit?.cartproduct?.length
+    cart_product_length = cartproductf_uncomplit?.cartproduct?.length
   } else {
     cart_product_length = 0;
   }
+
+
+  const logoutbutton = () => {
+    window.localStorage.clear()
+    dispatch({
+        type: "ADD_PROFILE",
+        profile: null
+    })
+    window.location.href = "/"
+}
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,7 +44,10 @@ const Navbar = () => {
                     <Link className="nav-link" to="/profile">Profile</Link>
                   </li>
                   <li className="nav-item active">
-                    <Link className="nav-link" to="#">Logout</Link>
+                    <Link className="nav-link" to="/">Contact</Link>
+                  </li>
+                  <li className="nav-item active">
+                    <Link onClick={logoutbutton} class="nav-link active btn-dark">Logout</Link>
                   </li>
                 </>
               )

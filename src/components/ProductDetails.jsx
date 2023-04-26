@@ -2,13 +2,20 @@
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-import {domain} from "../env"
+import { Link, useHistory } from 'react-router-dom'
 import SingleProduct from './SingleProduct'
+import { domain, header } from '../env'
+import { useGlobalState } from '../state/provider'
 
 const ProductDetails = () => {
    const {id} = useParams()
    const [product, setProduct] = useState(null)
    const [categoryproduct, setCategoryproduct] = useState(null)
+   
+   const [{ profile }, dispatch] = useGlobalState()
+
+   const history = useHistory()
+
    useEffect(() => {
    const getdata = async()=>{
       await Axios({
@@ -33,6 +40,27 @@ const ProductDetails = () => {
         setCategoryproduct(response.data)
       })
    }
+
+
+
+   const addtocart = async (id) => {
+       profile !== null ? (
+           await Axios({
+               method: 'post',
+               url: `${domain}/api/addtocart/`,
+               headers: header,
+               data: { "id": id }
+           }).then(response => {
+               //console.log(response,"34 Add yo cart");
+               dispatch({
+                   type: "ADD_RELOADPAGE_DATA",
+                   reloadpage: response
+               })
+           })
+       ) : (
+           history.push("/login")
+       )
+   }
    
 
   return (
@@ -48,7 +76,7 @@ const ProductDetails = () => {
                     <h2>Price: <del>{product?.marcket_price}TK.</del> {product?.selling_price}TK.</h2>
                 </div>
                 <div className="col-md-4 p-3">
-                    <a href="#" class="btn btn-primary">Add to Card</a>
+                <p onClick={() => addtocart(product?.id)} className="btn btn-success">Add to Cart</p>
                  </div>
                    <p>{product.description}</p>
                </div>

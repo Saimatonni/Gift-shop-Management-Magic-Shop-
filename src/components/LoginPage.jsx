@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { domain } from "../env"
+import { domain, header2 } from "../env"
 import Axios from 'axios'
 
 const LoginPage = () => {
@@ -10,14 +10,14 @@ const LoginPage = () => {
     Axios({
         url: `${domain}/api/login/`,
         method: "post",
-        //headers: header2,
+        headers: header2,
         data: {
             "username": username,
             "password": password
         }
     }).then(response => {
         window.localStorage.setItem('token', response.data['token'])
-       // window.location.href = "/"
+        window.location.href = "/"
        console.log(response.data['token'])
     }).catch(eee => {
         alert("Username OR Password is invalid Try Again !!")
@@ -35,7 +35,7 @@ const LoginPage = () => {
                 <label >Password</label>
                 <input onChange={e => setPassword(e.target.value)} type="password" class="form-control" placeholder="Password" />
             </div>
-            <p><button onClick={loginbutton} className="btn btn-success my-4">Login</button><Link to="/register">Register Now</Link></p>
+            <p><button onClick={loginbutton} className="btn btn-success my-4">Login</button><p>Don't have an account?<Link to="/register">Register Now</Link></p></p>
         </div>
     )
 }
