@@ -71,7 +71,7 @@ const App = () => {
       })
     }
     getdata()
-  }, [])
+  }, [reloadpage])
 
 
   return (
