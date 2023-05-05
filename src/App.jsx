@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
@@ -14,6 +15,8 @@ import Cart from './components/Cart'
 import Oladorders from './components/Oladorders'
 import Order from './components/Order'
 import OrderDetails from './components/OrderDetails'
+import "./App.css";
+
 
 const App = () => {
   //console.log(usertoken,"User token");
@@ -102,6 +105,7 @@ const App = () => {
         <Route exact component={HomePage} />
       </Switch>
     </BrowserRouter>
+    
   )
 }
 

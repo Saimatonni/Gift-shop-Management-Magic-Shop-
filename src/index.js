@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { Globalstate } from './state/provider';
 import reducer, { initialstate } from './state/reducer';
+import "./index.css";
 
 ReactDOM.render(
   <Globalstate initialstate={initialstate} reducer={reducer}>
