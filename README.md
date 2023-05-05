@@ -15,6 +15,6 @@ npm run build
 python manage.py runserver
 ```
 '''''install vanilla-tilt.js'''''
-src: https://micku7zu.github.io/vanilla-tilt.js/
+src: https://www.npmjs.com/package/react-vanilla-tilt
 or install via
-npm install vanilla-tilt
+npm install react-vanilla-tilt
