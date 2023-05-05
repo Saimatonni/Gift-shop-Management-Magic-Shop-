@@ -1,0 +1,99 @@
+.NavBar{
+    background-color: transparent;
+    z-index: 999;
+    overflow: auto;
+}
+
+.NavBar.active{
+    background: linear-gradient(var(#112B3C , #205375 )) ;
+}
+
+
+.custom-btn-blue{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-blue:hover{
+    letter-spacing: .15em;
+    background-color: #205375;
+    box-shadow: 0 0 35px #205375 ;
+    color: #8fc0e1;
+}
+.custom-btn-blue::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #112B3C ;
+}
+.custom-btn-blue span{
+    position: relative;
+    z-index: 1;
+}
+
+
+.custom-btn-red{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-red:hover{
+    letter-spacing: .15em;
+    background-color: #e01e0c ;
+    box-shadow: 0 0 35px #e01e0c ;
+    color: #ee5b4e;
+}
+.custom-btn-red::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #112B3C ;
+}
+.custom-btn-red span{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.custom-btn-orange{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-orange:hover{
+    letter-spacing: .15em;
+    background-color: #F66B0E;
+    box-shadow: 0 0 35px #F66B0E ;
+    color: #ee8d4d;
+}
+.custom-btn-orange::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #112B3C ;
+}
+.custom-btn-orange span{
+    position: relative;
+    z-index: 1;
+}
+
+/* ============ desktop view ============ */
+/* @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #F66B0E;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	 */

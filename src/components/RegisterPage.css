@@ -1,0 +1,25 @@
+.custom-btn-green{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-green:hover{
+    letter-spacing: .15em;
+    background-color: #29a079;
+    box-shadow: 0 0 35px #249a73 ;
+    color: #92c7b5;
+}
+.custom-btn-green::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #205375 ;
+}
+.custom-btn-green span{
+    position: relative;
+    z-index: 1;
+}

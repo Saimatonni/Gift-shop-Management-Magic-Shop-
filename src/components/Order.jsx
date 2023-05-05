@@ -69,7 +69,7 @@ const Order = () => {
                 <th colSpan="4" className="text-right" >Total</th>
                 <th>{cartproductf_uncomplit?.total}</th>
               </tr>
-              <Link to='/cart/' className="btn btn-outline-secondary" >Edit Cart</Link>
+              <Link to='/cart/' className="btn custom-btn-orange" ><span>Edit Cart</span></Link>
             </tfoot>
           </table>
         </div>
@@ -88,7 +88,7 @@ const Order = () => {
               <label>Email</label>
               <input onChange={(e) => setEmail(e.target.value)} type="text" className="form-control" placeholder="Email" />
             </div>
-            <button className="btn btn-info my-3" onClick={ordernow} >Order</button>
+            <button className="btn custom-btn-info my-3" onClick={ordernow} ><span>Order</span></button>
           </div>
         </div>
       </div>

@@ -38,8 +38,8 @@ const Oladorders = () => {
                 <thead>
                     <tr>
                         <th>SN</th>
-                        <th>Totla</th>
-                        <th>Product</th>
+                        <th>Total</th>
+                        <th>Quantity</th>
                         <th>Order Status</th>
                         <th></th>
                         <th></th>
@@ -54,8 +54,8 @@ const Oladorders = () => {
                                     <td>TK. {order?.total}</td>
                                     <td>{order?.cartproduct?.length}</td>
                                     <td>{order?.order_status}</td>
-                                    <td><Link to={`/orderdetails/${order?.id}`}className="btn btn-success">Details</Link></td>
-                                    <td><p onClick={() => delateorderhistory(order.id)} className="btn btn-danger">Delete</p></td>
+                                    <td><Link to={`/orderdetails/${order?.id}`}className="btn custom-btn-green"><span>Details</span></Link></td>
+                                    <td><p onClick={() => delateorderhistory(order.id)} className="btn custom-btn-red"><span>Delete</span></p></td>
                                 </tr>
                             )) :
                             (
@@ -63,7 +63,7 @@ const Oladorders = () => {
                                     <h1 className="display-1">
                                         No Old Order
                                     </h1>
-                                    <Link to="/" className="btn btn-info">GO HOME</Link>
+                                    <Link to="/" className="btn custom-btn-info"><span>GO HOME</span></Link>
                                 </div>
                             )
                     }

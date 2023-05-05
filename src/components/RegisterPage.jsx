@@ -2,6 +2,7 @@ import Axios from 'axios'
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { domain, header2 } from '../env'
+import './RegisterPage.css'
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("")
@@ -33,6 +34,7 @@ const RegisterPage = () => {
 }
 
   return (
+    
     <div className="container my-5 p-5">
       <h1>Register</h1>
       <div class="form-group">
@@ -47,7 +49,7 @@ const RegisterPage = () => {
         <label >Confirm Password</label>
         <input onChange={e => setPassword2(e.target.value)} type="password" class="form-control" placeholder="Confirm Password" />
       </div>
-      <p><button onClick={registerButton} className="btn btn-success my-4 mx-3">Register</button><Link to="/login">Login Now</Link></p>
+      <p><button onClick={registerButton} className="btn custom-btn-green my-4 mx-3"><span>Register</span></button><Link to="/login">Login Now</Link></p>
     </div>
   )
 }

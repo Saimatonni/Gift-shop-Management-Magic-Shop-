@@ -26,7 +26,7 @@ const LoginPage = () => {
 }
     return (
         <div className="container my-5 p-5">
-            <h1>LoginPage</h1>
+            <h1>Login</h1>
             <div class="form-group">
                 <label >Username</label>
                 <input  onChange={e => setUsername(e.target.value)} type="text" class="form-control" placeholder="Username" />
@@ -35,7 +35,7 @@ const LoginPage = () => {
                 <label >Password</label>
                 <input onChange={e => setPassword(e.target.value)} type="password" class="form-control" placeholder="Password" />
             </div>
-            <p><button onClick={loginbutton} className="btn btn-success my-4">Login</button><p>Don't have an account?<Link to="/register">Register Now</Link></p></p>
+            <p><button onClick={loginbutton} className="btn custom-btn-green my-4"><span>Login</span></button><p>Don't have an account?<Link to="/register">Register Now</Link></p></p>
         </div>
     )
 }

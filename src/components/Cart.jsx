@@ -86,7 +86,7 @@ const Cart = () => {
         <div className="container p-3">
             {
                 cart_productt_length !== 0 ?
-                    <table className="table table-striped">
+                    <table  className="table table-striped">
                         <thead>
                             <th>SN</th>
                             <th>Product</th>
@@ -105,9 +105,9 @@ const Cart = () => {
                                         <td>{data.quantity}</td>
                                         <td>{data.subtotal}</td>
                                         <td>
-                                            <button onClick={() => editcartproduct(data.id)} className="btn btn-info">-</button>
-                                            <button onClick={() => delatecartproduct(data.id)} className="btn btn-danger mx-1">X</button>
-                                            <button onClick={() => updatecartproduct(data.id)} className="btn btn-success">+</button>
+                                            <button onClick={() => editcartproduct(data.id)} className="btn custom-btn-info"><span>-</span></button>
+                                            <button onClick={() => delatecartproduct(data.id)} className="btn custom-btn-red mx-1"><span>X</span></button>
+                                            <button onClick={() => updatecartproduct(data.id)} className="btn custom-btn-green"><span>+</span></button>
                                         </td>
                                     </tr>
                                 ))
@@ -118,7 +118,7 @@ const Cart = () => {
                                 <th colSpan="4" className="text-right" >Total</th>
                                 <th>{cartproductf_uncomplit?.total}</th>
                                 <th>
-                                    <Link to="/order" className="btn btn-success" >OrderNow</Link>
+                                    <Link to="/order" className="btn custom-btn-green" ><span>Order Now</span></Link>
                                 </th>
                             </tr>
                         </tfoot>
@@ -130,13 +130,13 @@ const Cart = () => {
             }
             <div className="row">
                 <div className="col">
-                    <Link to="/oldorders" className="btn btn-warning" >Old Orders</Link>
+                    <Link to="/oldorders" className="btn custom-btn-orange" ><span>Old Orders</span></Link>
                 </div>
                 {
                     cart_productt_length !== 0 &&
                     <>
                         <div className="col">
-                            <Link onClick={() => delatefullcard(cartproductf_uncomplit.id)} className="btn btn-danger" >Delate Card</Link>
+                            <Link onClick={() => delatefullcard(cartproductf_uncomplit.id)} className="btn custom-btn-red" ><span>Delate Cart</span></Link>
                         </div>
                     </>
                 }

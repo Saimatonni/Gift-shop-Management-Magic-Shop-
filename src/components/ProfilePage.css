@@ -1,0 +1,113 @@
+.custom-btn-info{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-info:hover{
+    letter-spacing: .15em;
+    background-color: #4096d0;
+    box-shadow: 0 0 35px #4096d0 ;
+    color: rgb(156, 208, 244);
+}
+.custom-btn-info::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #205375 ;
+}
+.custom-btn-info span{
+    position: relative;
+    z-index: 1;
+}
+
+
+.custom-btn-green{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-green:hover{
+    letter-spacing: .15em;
+    background-color: #207559;
+    box-shadow: 0 0 35px #207559 ;
+    color: #92c7b5;
+}
+.custom-btn-green::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #205375 ;
+}
+.custom-btn-green span{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.sparklePP img{
+    width: 50px;
+    animation: sparklezPP 7s linear infinite;
+}
+
+.sparklePP{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes sparklezPP{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        
+        opacity: 1;
+    }
+    70%{
+        
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-215vh);
+        opacity: 0;
+    }
+}
+
+.sparklePP img:nth-child(1){
+    animation-delay: 2s;
+    width: 25px;
+}
+.sparklePP img:nth-child(2){
+    animation-delay: 1s;
+}
+.sparklePP img:nth-child(3){
+    animation-delay: 3s;
+    width: 25px;
+}
+.sparklePP img:nth-child(4){
+    animation-delay: 4.5s ;
+}
+.sparklePP img:nth-child(5){
+    animation-delay: 3s;
+}
+.sparklePP img:nth-child(6){
+    animation-delay: 6s;
+    width: 45px;
+}
+.sparklePP img:nth-child(7){
+    animation-delay: 7s;
+    width: 35px;
+}

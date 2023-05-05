@@ -2,6 +2,8 @@ import Axios from 'axios'
 import React, { useState } from 'react'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
+import './ProfilePage.css'
+import sparkles from '../assests/white-sparkle-png-transparent-29.png'
 
 const Profilepage = () => {
   const [{ profile }, dispatch] = useGlobalState()
@@ -54,6 +56,8 @@ const Profilepage = () => {
 
   return (
     <div className="container">
+      
+
       <div className='row'>
         <div className='media'>
           <img className="rounded-circle account-img" src={`${domain}${profile?.image}`} />
@@ -66,7 +70,7 @@ const Profilepage = () => {
         <div class="form-group">
           <label>Profile Image</label>
           <input onChange={(e) => setImage(e.target.files[0])} type="file" class="form-control" />
-          <button onClick={uploadimage} className='btn btn-info my-2'>Upload</button>
+          <button onClick={uploadimage} className='btn custom-btn-info my-2'><span>Upload</span></button>
         </div>
         <div class="form-group">
           <label>First Name</label>
@@ -80,8 +84,20 @@ const Profilepage = () => {
           <label>Email</label>
           <input type="email" class="form-control" onChange={(e) => setemail(e.target.value)} value={email} />
         </div>
-        <button className='btn btn-success my-2' onClick={userdataupdate}>Update</button>
+        <button className='btn custom-btn-green my-2' onClick={userdataupdate}><span>Update</span></button>
       </div>
+
+      <div className="sparklePP">
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+            </div>
+            
+
     </div>
   )
 }

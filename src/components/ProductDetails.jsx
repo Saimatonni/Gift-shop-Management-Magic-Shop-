@@ -76,7 +76,7 @@ const ProductDetails = () => {
                     <h2>Price: <del>{product?.marcket_price}TK.</del> {product?.selling_price}TK.</h2>
                 </div>
                 <div className="col-md-4 p-3">
-                <p onClick={() => addtocart(product?.id)} className="btn btn-success">Add to Cart</p>
+                <p onClick={() => addtocart(product?.id)} className="btn custom-btn-orange"><span>Add to Cart</span></p>
                  </div>
                    <p>{product.description}</p>
                </div>

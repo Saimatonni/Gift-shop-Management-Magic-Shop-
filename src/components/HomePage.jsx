@@ -3,10 +3,17 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { domain } from "../env"
 import SingleProduct from './SingleProduct'
+import css from  './HomePage.css'
+import './HomePage.css'
+import cloud_1_back from '../assests/cloud_1_back.png'
+import whale from '../assests/whale.png'
+import sparkles from '../assests/white-sparkle-png-transparent-29.png'
+
 
 const HomePage = () => {
     const [products, setProducts] = useState(null);
     const [categoris, setCategoris] = useState(null)
+    const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
         const getdata = async () => {
             await Axios({
@@ -34,6 +41,18 @@ const HomePage = () => {
         getcategory()
     }, [])
 
+    useEffect(() => {
+        function handleScroll() {
+          setScrollY(window.scrollY);
+        }
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [])
+
     const nextpage = async () => {
        await Axios({
             method: "get",
@@ -56,6 +75,15 @@ const HomePage = () => {
 
     return (
         <div className="container-fluid">
+             
+             <div className={css.NightSky}> 
+             <section class = "parallax">
+                <img src={cloud_1_back} alt="cloud_1_back" id = "cloud_1_back" />
+                <img src={whale} alt="whale" id = "whale" style={{ transform: `translateX(${scrollY * -2}px)` }} />
+            </section> 
+            </div>
+
+
             <div className="row">
                 <div className="col-md-9">
                     <div className="row">
@@ -68,22 +96,23 @@ const HomePage = () => {
 
                             ))
                         }
+                        
                         <div className="homepage__pagination">
                         <div>
                             {
                                 products?.previous !== null ?(
-                                    <button onClick={prevoous} className="btn btn-lg btn-success">Previous</button> 
+                                    <button onClick={prevoous} className="btn btn-lg custom-btn-green"><span>Previous</span></button> 
                                 ):(
-                                    <button className="btn btn-lg btn-success" disabled>Previous</button>  
+                                    <button className="btn btn-lg custom-btn-white" disabled><span>Previous</span></button>  
                                 )
                             }
                             </div>
                             <div>
                             {
                                 products?.next !== null ?(
-                                    <button onClick={nextpage} className="btn btn-lg btn-success">Next</button> 
+                                    <button onClick={nextpage} className="btn btn-lg custom-btn-green"><span>Next</span></button> 
                                 ):(
-                                    <button className="btn btn-lg btn-success" disabled>Next</button>  
+                                    <button className="btn btn-lg custom-btn-white" disabled><span>Next</span></button>  
                                 )
                             }
                             
@@ -92,17 +121,31 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className="col-md-2 mt-3">
-                    <h1>All Categoris</h1>
+                    <h1>All Categories</h1>
                     {
                         categoris?.map((cata, i) => (
                             <div className="p-2 m-2" key={i}>
-                                 <Link to={`/category/${cata?.id}`} className="btn btn-success">{cata.title}</Link>
+                                 <Link to={`/category/${cata?.id}`} className="btn custom-btn-blue"><span>{cata.title}</span></Link>
                             </div>
                         ))
                     }
                 </div>
                 <div className="col-md-3 bg-dark"></div>
             </div>
+
+            <div className="sparkle">
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+            </div>     
+         
+
+        
+
         </div>
     )
 }
