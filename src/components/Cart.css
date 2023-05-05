@@ -113,3 +113,8 @@
     position: relative;
     z-index: 1;
 }
+
+.Table_name{
+    color: white;
+    text-shadow: #205375;
+}

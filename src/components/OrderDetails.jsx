@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { domain, header } from '../env';
+import './OrderDetails.css'
 
 const OrderDetails = () => {
     const { id } = useParams()
@@ -23,7 +24,7 @@ const OrderDetails = () => {
     const products = details?.cartproduct
     return (
         <div className="container p-3">
-            <table className="table table-bordered ">
+            <table className="table table-bordered Table_1">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -52,7 +53,7 @@ const OrderDetails = () => {
                 </tbody>
             </table>
             <h1>Product details</h1>
-            <table className="table table-bordered ">
+            <table className="table table-bordered Table_2">
                 <thead>
                     <tr>
                         <th>SN</th>

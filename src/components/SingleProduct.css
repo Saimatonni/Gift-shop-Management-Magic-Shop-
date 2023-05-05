@@ -1,5 +1,12 @@
 
-
+.Card{
+    width: 90%;
+    max-width: 550px;
+    color: #ffffff !important;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1ps solid rgba(255, 255, 255, 0.3);
+}
 
 
 .custom-btn-orange{
