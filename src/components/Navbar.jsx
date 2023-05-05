@@ -64,8 +64,8 @@ window.addEventListener('scroll', changeBackground);
                 <>
                   <li class="nav-item active">
                     <Link to="/cart" class="btn custom-btn-orange">
-                    <i class="fas fa-cart-plus"></i>
-                      <span>({cart_product_length})</span>
+                    <span> <i class="fas fa-cart-plus"></i>
+                      ({cart_product_length})</span>
                     </Link>
                   </li>
                   <li className="nav-item active">
