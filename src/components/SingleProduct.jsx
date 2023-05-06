@@ -31,11 +31,11 @@ const SingleProduct = ({ item }) => {
     }
 
     return (
-        <div class="card single_product Card" >
+        <div class="card single_product" >
             <Link to={`/product/${item.id}`}>
                 <img class="card-img-top" src={item.image} alt="Card image cap" />
             </Link>
-            <div class="card-body" >
+            <div class="card-body">
                 <h5 class="card-title">{item.title}</h5>
                 <p class="card-text">{(item.description).substring(0, 70)}....<Link to={`/product/${item.id}`}>more</Link></p>
                 <button onClick={() => addtocart(item.id)} class="btn custom-btn-orange"><span>Add to Cart</span></button>

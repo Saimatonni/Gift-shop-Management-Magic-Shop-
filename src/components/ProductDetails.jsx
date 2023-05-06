@@ -6,7 +6,6 @@ import { Link, useHistory } from 'react-router-dom'
 import SingleProduct from './SingleProduct'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
-import './ProductDetails.css'
 
 const ProductDetails = () => {
    const {id} = useParams()

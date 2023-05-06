@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { domain, header2 } from "../env"
 import Axios from 'axios'
-import './LoginPage.css'
 
 const LoginPage = () => {
     const [username, setUsername] = useState("")

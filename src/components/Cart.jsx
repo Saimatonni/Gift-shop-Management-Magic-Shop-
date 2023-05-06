@@ -3,7 +3,6 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { domain, header } from '../env';
 import { useGlobalState } from '../state/provider';
-import './Cart.css'
 
 const Cart = () => {
     const [{ cartproductf_uncomplit }, dispatch] = useGlobalState()
@@ -87,7 +86,7 @@ const Cart = () => {
         <div className="container p-3">
             {
                 cart_productt_length !== 0 ?
-                    <table  className="table Table_name"  >
+                    <table  className="table table-striped">
                         <thead>
                             <th>SN</th>
                             <th>Product</th>

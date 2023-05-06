@@ -2,7 +2,6 @@ import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { domain, header } from '../env'
-import './oldOrders.css'
 
 const Oladorders = () => {
     const [orders, setOrders] = useState(null)
@@ -35,7 +34,7 @@ const Oladorders = () => {
     return (
         <div className="container">
             <h1>Orders History</h1>
-            <table className="table old_table_name ">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>SN</th>

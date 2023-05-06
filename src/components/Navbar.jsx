@@ -27,21 +27,21 @@ const Navbar = () => {
   const logoutbutton = () => {
     window.localStorage.clear()
     dispatch({
-        type: "ADD_PROFILE",
-        profile: null
+      type: "ADD_PROFILE",
+      profile: null
     })
     window.location.href = "/"
-}
-
-
-const changeBackground = () => {
-  if(window.scrollY >=2){
-    setNavbar(true);
-  }else{
-    setNavbar(false);
   }
-}
-window.addEventListener('scroll', changeBackground);
+
+
+  const changeBackground = () => {
+    if (window.scrollY >= 2) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  }
+  window.addEventListener('scroll', changeBackground);
 
 
   return (
@@ -49,9 +49,9 @@ window.addEventListener('scroll', changeBackground);
       <div className={css.container}>
 
         <div className={css.logo}>
-            <img src={Logo} alt="" />
-          </div>
-        </div> 
+          <img src={Logo} alt="" />
+        </div>
+      </div>
       <Link className="navbar-brand " to="/">Magic Shop</Link>
       <button className="navbar-toggler custom-btn-blue" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -62,26 +62,42 @@ window.addEventListener('scroll', changeBackground);
             profile !== null ?
               (
                 <>
+                 <li className="nav-item active">
+                  <div className='search-box f_flex mx-5' >
+                  <span>
+                    <i className='fa fa-search mx-2' ></i>
+                    <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }}/> </span>
+                  </div>
+                 
+                  </li>
                   <li class="nav-item active">
                     <Link to="/cart" class="btn custom-btn-orange">
-                    <span> <i class="fas fa-cart-plus"></i>
-                      ({cart_product_length})</span>
+                      <span> <i class="fas fa-cart-plus"></i>
+                        ({cart_product_length})</span>
                     </Link>
                   </li>
                   <li className="nav-item active">
                     <Link className="nav-link custom-btn-blue" to="/profile"><span>Profile</span></Link>
                   </li>
                   <li className="nav-item active">
-                    <Link className="nav-link custom-btn-blue" to="/"><span>Contact</span></Link>
+                    <Link className="nav-link custom-btn-blue" to="/contact"><span>Contact</span></Link>
                   </li>
                   <li className="nav-item active">
-                  <Link onClick={logoutbutton} class="nav-link custom-btn-red"><span>Logout</span></Link>
+                    <Link onClick={logoutbutton} class="nav-link custom-btn-red"><span>Logout</span></Link>
                   </li>
                 </>
               )
               :
               (
                 <>
+                <li className="nav-item active">
+                  <div className='search-box f_flex mx-5' >
+                  <span>
+                    <i className='fa fa-search mx-2' ></i>
+                    <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }}/> </span>
+                  </div>
+                 
+                  </li>
                   <li className="nav-item active ">
                     <Link className="nav-link active custom-btn-blue" to="/login"><span>Login</span></Link>
                   </li>
