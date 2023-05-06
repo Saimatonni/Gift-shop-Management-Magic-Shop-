@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
@@ -16,6 +15,9 @@ import Oladorders from './components/Oladorders'
 import Order from './components/Order'
 import OrderDetails from './components/OrderDetails'
 import "./App.css";
+import contacts from './components/contacts'
+import Home from './components/home'
+import Head from './components/Head'
 
 
 const App = () => {
@@ -79,9 +81,10 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    
       <Navbar />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/category/:id" component={CategoryProducts} />
         {
@@ -89,6 +92,7 @@ const App = () => {
             <>
               <Route exact path='/profile' component={Profilepage} />
               <Route exact path='/cart' component={Cart} />
+              <Route exact path='/contact' component={contacts} />
               <Route exact path='/oldorders' component={Oladorders} />
               <Route exact path='/order' component={Order} />
               <Route exact path='/orderdetails/:id' component={OrderDetails} />
