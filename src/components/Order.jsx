@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
+import './Order.css'
 
 const Order = () => {
   const [{ cartproductf_uncomplit }, dispatch] = useGlobalState()

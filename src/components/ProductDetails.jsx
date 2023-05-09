@@ -6,6 +6,10 @@ import { Link, useHistory } from 'react-router-dom'
 import SingleProduct from './SingleProduct'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
+import './ProductDetails.css'
+
+import sparkles from '../assests/white-sparkle-png-transparent-29.png'
+
 
 const ProductDetails = () => {
    const {id} = useParams()
@@ -88,12 +92,22 @@ const ProductDetails = () => {
                 {
                     categoryproduct !== null &&
                     categoryproduct[0]?.category_product?.map((product, i) => (
-                        <div className="col-md-3 mt-2" key={i}>
+                        <div className="col-md-3 mt-2 " key={i} style={{ width: '30%',  height: '40%' }} >
                             <SingleProduct item={product} />
                         </div>
                     ))
                 }
             </div>
+
+            <div className="sparkle">
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+                <img src={sparkles} />
+            </div> 
     </div>
   )
 }
