@@ -18,6 +18,7 @@ import "./App.css";
 import contacts from './components/contacts'
 import Home from './components/home'
 import Head from './components/Head'
+import PaymentPage from './components/PaymentPage'
 
 
 const App = () => {
@@ -94,6 +95,7 @@ const App = () => {
               <Route exact path='/cart' component={Cart} />
               <Route exact path='/contact' component={contacts} />
               <Route exact path='/oldorders' component={Oladorders} />
+              <Route exact path='/payment' component={PaymentPage} />
               <Route exact path='/order' component={Order} />
               <Route exact path='/orderdetails/:id' component={OrderDetails} />
             </>
