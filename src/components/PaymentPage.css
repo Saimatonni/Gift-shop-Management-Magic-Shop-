@@ -1,0 +1,50 @@
+.Pcontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-title {
+    margin-top: 0;
+  }
+  
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .payment-option input[type='radio'] {
+    margin-right: 10px;
+  }
+  
+  .card-element-container {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .payment-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

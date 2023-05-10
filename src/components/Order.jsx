@@ -36,7 +36,7 @@ const Order = () => {
         type: "ADD_CARTPRODUCT_UNCOMPLIT",
         cartproductf_uncomplit: null
       })
-      history.push('/oldorders')
+      history.push('/payment')
     })
   }
 

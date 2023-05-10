@@ -6,10 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import SingleProduct from './SingleProduct'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
-import './ProductDetails.css'
-
 import sparkles from '../assests/white-sparkle-png-transparent-29.png'
-
 
 const ProductDetails = () => {
    const {id} = useParams()
@@ -67,7 +64,7 @@ const ProductDetails = () => {
    }
    
 
-  return (
+   return (
     <div className="container">
        {
         product !== null &&

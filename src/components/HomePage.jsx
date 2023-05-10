@@ -11,6 +11,7 @@ import sparkles from '../assests/white-sparkle-png-transparent-29.png'
 import Footer from './Footer'
 import Wrapper from './Wrapper'
 import Slider from './Slider'
+import SearchProduct from './SearchProduct'
 
 
 const HomePage = () => {
@@ -80,10 +81,11 @@ const HomePage = () => {
         <div className="container-fluid">
              
              <div className={css.NightSky}> 
-             <section class = "parallax">
+             {/* <section class = "parallax">
                 <img src={cloud_1_back} alt="cloud_1_back" id = "cloud_1_back" />
                 <img src={whale} alt="whale" id = "whale" style={{ transform: `translateX(${scrollY * -2}px)` }} />
-            </section> 
+            </section>  */}
+            <SearchProduct/>
             <Slider/>
             </div>
 

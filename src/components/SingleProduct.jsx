@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
 import './SingleProduct.css'
-
+import VanillaTilt from 'react-vanilla-tilt'
 
 const SingleProduct = ({ item }) => {
     const [{ profile }, dispatch] = useGlobalState()
@@ -31,19 +31,40 @@ const SingleProduct = ({ item }) => {
     }
 
     return (
-        <div class="card single_product" >
-            <Link to={`/product/${item.id}`}>
-                <img class="card-img-top" src={item.image} alt="Card image cap" />
-            </Link>
-            <div class="card-body">
-                <h5 class="card-title">{item.title}</h5>
-                <p class="card-text">{(item.description).substring(0, 70)}....<Link to={`/product/${item.id}`}>more</Link></p>
-                <button onClick={() => addtocart(item.id)} class="btn custom-btn-orange"><span>Add to Cart</span></button>
+        <VanillaTilt 
+        options={{ 
+            glare: true,
+            maxGlare: 1
+         }} 
+                style={{
+                width: '100%', 
+                height: '100%', 
+                textAlign: 'center', 
+                padding: '50px 35px' ,
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                background: 'rgba(255, 255, 255, 0.2)',
+                borderRadius: '16px',
+                boxShadow: '0 4px 30px rgba(0, 0 , 0, 0.1)',
+                backdropFilter: 'blur(5px)' 
+            }} >
+            <div class="card single_product Card"  >
+                <Link to={`/product/${item.id}`}>
+                    <img class="card-img-top" src={item.image} alt="Card image cap" />
+                </Link>
+                
+                <div class="card-body" >
+                    <h5 class="card-title">{item.title}</h5>
+                    <p class="card-text">{(item.description).substring(0, 70)}....<Link to={`/product/${item.id}`}>more</Link></p>
+                    <button onClick={() => addtocart(item.id)} class="btn custom-btn-orange"><span>Add to Cart</span></button>
+                </div>
+                <div className='card-footer'>
+                    <h5>Price:<del>{item.marcket_price}TK.</del>{item.selling_price}TK.</h5>
+                </div>
+                
+                
             </div>
-            <div className='card-footer'>
-                <h5>Price:<del>{item.marcket_price}TK.</del>{item.selling_price}TK.</h5>
-            </div>
-        </div>
+            </VanillaTilt>
+        
     )
 }
 

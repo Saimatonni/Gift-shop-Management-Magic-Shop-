@@ -5,14 +5,17 @@ import css from './NavBar.module.css'
 import './Navbar.css'
 import Logo from '../assests/logo2.png'
 import { useState, useEffect } from 'react'
-
-
+import { domain } from "../env"
+import Axios from 'axios'
+import SingleProduct from './SingleProduct'
+import SearchProduct from './SearchProduct'
 
 
 
 const Navbar = () => {
 
   const [navbar, setNavbar] = useState(false);
+  const [results, setResults] = useState([]);
 
   const [{ profile, cartproductf_uncomplit }, dispatch] = useGlobalState()
   // console.log(cartproductf_uncomplit, "$$$444uncomplit cart");
@@ -22,6 +25,24 @@ const Navbar = () => {
   } else {
     cart_product_length = 0;
   }
+
+
+  const [query, setQuery] = useState("");
+  const [products, setProducts] = useState(null);
+  const handleSearch = () => {
+    Axios
+      .get(`${domain}/api/product/?search=${query}`)
+      .then((response) => {
+        console.log(response.data, "from serach");
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
+
 
 
   const logoutbutton = () => {
@@ -62,14 +83,14 @@ const Navbar = () => {
             profile !== null ?
               (
                 <>
-                 <li className="nav-item active">
-                  <div className='search-box f_flex mx-5' >
-                  <span>
-                    <i className='fa fa-search mx-2' ></i>
-                    <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }}/> </span>
-                  </div>
-                 
-                  </li>
+                  {/* <li className="nav-item active">
+                     <div className='search-box f_flex mx-5' >
+                      <span>
+                        <i className='fa fa-search mx-2' ></i>
+                        <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }} /> </span>
+                    </div> 
+
+                  </li> */}
                   <li class="nav-item active">
                     <Link to="/cart" class="btn custom-btn-orange">
                       <span> <i class="fas fa-cart-plus"></i>
@@ -90,13 +111,13 @@ const Navbar = () => {
               :
               (
                 <>
-                <li className="nav-item active">
-                  <div className='search-box f_flex mx-5' >
-                  <span>
-                    <i className='fa fa-search mx-2' ></i>
-                    <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }}/> </span>
-                  </div>
-                 
+                  <li className="nav-item active">
+                    <div className='search-box f_flex mx-5' >
+                      <span>
+                        <i className='fa fa-search mx-2' ></i>
+                        <input type='text' placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }} /> </span>
+                    </div>
+
                   </li>
                   <li className="nav-item active ">
                     <Link className="nav-link active custom-btn-blue" to="/login"><span>Login</span></Link>
