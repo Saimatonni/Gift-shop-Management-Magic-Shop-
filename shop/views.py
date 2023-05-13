@@ -18,6 +18,12 @@ class ProductView(generics.GenericAPIView,mixins.ListModelMixin,mixins.RetrieveM
             return self.retrieve(request)
         else:
             return self.list(request)
+    def get_queryset(self):
+        queryset = Product.objects.all()
+        search_query = self.request.query_params.get('search', None)
+        if search_query is not None:
+            queryset = queryset.filter(title__icontains=search_query)
+        return queryset
 
 class CatagoryViewset(viewsets.ViewSet):
     def list(self,request):
