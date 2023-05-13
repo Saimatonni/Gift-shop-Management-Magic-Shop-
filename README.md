@@ -18,3 +18,10 @@ python manage.py runserver
 src: https://www.npmjs.com/package/react-vanilla-tilt
 or install via
 npm install react-vanilla-tilt
+
+
+'''''install react-slick''''''''''
+npm install react-slick
+
+''''''install slick-carousel for css and font''''''
+npm install slick-carousel
