@@ -7,6 +7,8 @@ import './Order.css'
 
 const Order = () => {
   const [{ cartproductf_uncomplit }, dispatch] = useGlobalState()
+
+  
   // console.log(cartproductf_uncomplit?.id);
   const [address, setAddress] = useState("")
   const [mobile, setMobile] = useState("")
@@ -21,6 +23,19 @@ const Order = () => {
   }
 
   const ordernow = async () => {
+
+    const mobileRegex = /^\d{11}$/;
+  if (!mobile.match(mobileRegex)) {
+    alert("Invalid mobile number. Please enter a 11-digit number.");
+    return;
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.match(emailRegex)) {
+    alert("Invalid email format. Please enter a valid email address.");
+    return;
+  }
     Axios({
       method: "post",
       url: `${domain}/api/orders/`,
