@@ -15,18 +15,18 @@ npm run build
 python manage.py runserver
 ```
 ```
-install vanilla-tilt.js
+install vanilla-tilt.js :
 src: https://www.npmjs.com/package/react-vanilla-tilt
 or install via
 npm install react-vanilla-tilt
 ```
 
 ```
-install react-slick
+install react-slick :
 npm install react-slick
 ```
 
 ```
-install slick-carousel for css and font
+install slick-carousel for css and font :
 npm install slick-carousel
 ```
