@@ -4,6 +4,7 @@ import { domain } from "../env"
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import SingleProduct from './SingleProduct'
+import './CategoryProducts.css'
 
 const CategoryProducts = () => {
   const { id } = useParams() 
@@ -24,11 +25,11 @@ const CategoryProducts = () => {
     <div className="container">
     <h1>Category: {cataproduct?.title}</h1>
     <h2>Category Products</h2>
-    <div className="row">
+    <div className="row category_products">
         {
             cataproduct !== null &&
             cataproduct?.category_product.map((product, i) => (
-                <div className="col-md-3">
+                <div className="col-md-6">
                     <SingleProduct item={product} key={i} />
                 </div>
             ))
