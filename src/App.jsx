@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import HomePage from './components/HomePage'
+import Home from './components/home'
 import Navbar from './components/Navbar'
+import HomePage from './components/HomePage'
 import Axios from 'axios'
 import ProductDetails from './components/ProductDetails'
 import CategoryProducts from './components/CategoryProducts'
@@ -16,9 +18,10 @@ import Order from './components/Order'
 import OrderDetails from './components/OrderDetails'
 import "./App.css";
 import contacts from './components/contacts'
-import Home from './components/home'
-import Head from './components/Head'
 import PaymentPage from './components/PaymentPage'
+import AboutUs from './components/AboutUs'
+import CustomerCare from './components/CustomerCare'
+
 
 
 const App = () => {
@@ -82,7 +85,6 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -92,8 +94,10 @@ const App = () => {
           profile !== null ? (
             <>
               <Route exact path='/profile' component={Profilepage} />
-              <Route exact path='/cart' component={Cart} />
+              <Route exact path='/AboutUs' component={AboutUs} />
               <Route exact path='/contact' component={contacts} />
+              <Route exact path='/CustomerCare' component={CustomerCare} />
+              <Route exact path='/cart' component={Cart} />
               <Route exact path='/oldorders' component={Oladorders} />
               <Route exact path='/payment' component={PaymentPage} />
               <Route exact path='/order' component={Order} />
