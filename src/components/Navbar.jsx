@@ -55,7 +55,7 @@ window.addEventListener('scroll', changeBackground);
             <img src={Logo} alt="" />
           </div>
         </div> 
-      <Link className="navbar-brand " to="/">Magic Shop</Link>
+      <Link className="navbar-brand " style={{ color: '#e9edef' , textShadow: '2px 2px 4px rgba(0,0,0,1)' }} to="/">Magic Shop</Link>
       <button className="navbar-toggler custom-btn-blue" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
