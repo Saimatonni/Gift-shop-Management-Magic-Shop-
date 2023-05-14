@@ -37,15 +37,16 @@ const SingleProduct = ({ item }) => {
             maxGlare: 1
          }} 
                 style={{
-                width: '100%', 
-                height: '100%', 
+                width: '450px', 
+                height: '650px', 
+                margin: '10px' ,
                 textAlign: 'center', 
-                padding: '50px 35px' ,
+                
                 border: '1px solid rgba(255, 255, 255, 0.3)',
-                background: 'rgba(255, 255, 255, 0.2)',
+                background: 'rgba(255, 255, 255, 0.17)',
                 borderRadius: '16px',
                 boxShadow: '0 4px 30px rgba(0, 0 , 0, 0.1)',
-                backdropFilter: 'blur(5px)' 
+                backdropFilter: 'blur(.2px)' 
             }} >
             <div class="card single_product Card"  >
                 <Link to={`/product/${item.id}`}>

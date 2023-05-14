@@ -87,12 +87,12 @@ const ProductDetails = () => {
             </>
         )
        }
-       <div className="row">
+       <div className="row related-products">
                 <h1>Related Products</h1>
                 {
                     categoryproduct !== null &&
                     categoryproduct[0]?.category_product?.map((product, i) => (
-                        <div className="col-md-3 mt-2 " key={i} style={{ width: '30%',  height: '40%' }} >
+                        <div className="col-md-6 mt-2 " key={i} style={{ width: '30%',  height: '40%' }} >
                             <SingleProduct item={product} />
                         </div>
                     ))

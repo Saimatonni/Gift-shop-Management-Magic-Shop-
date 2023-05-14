@@ -57,9 +57,9 @@ const Order = () => {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row ">
         <div className="col-md-6 p-2">
-          <table className="table table-striped">
+          <table className="table order_table">
             <thead>
               <th>SN</th>
               <th>Product</th>
@@ -85,7 +85,7 @@ const Order = () => {
                 <th colSpan="4" className="text-right" >Total</th>
                 <th>{cartproductf_uncomplit?.total}</th>
               </tr>
-              <Link to='/cart/' className="btn custom-btn-orange" ><span>Edit Cart</span></Link>
+              <Link to='/cart/' className="btn custom-btn-orange-order" ><span>Edit Cart</span></Link>
             </tfoot>
           </table>
         </div>
@@ -104,7 +104,7 @@ const Order = () => {
               <label>Email</label>
               <input onChange={(e) => setEmail(e.target.value)} type="text" className="form-control" placeholder="Email" />
             </div>
-            <button className="btn custom-btn-info my-3" onClick={ordernow} ><span>Order</span></button>
+            <button className="btn custom-btn-blue my-3" onClick={ordernow} ><span>Order</span></button>
           </div>
         </div>
       </div>

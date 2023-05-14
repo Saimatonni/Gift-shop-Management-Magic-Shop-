@@ -30,6 +30,12 @@
     justify-content: center;
   }
 
+  .related-products .col-md-6 {
+    /* display: flex;
+    justify-content: center; */
+    margin: 50px;
+  }
+
 .custom-btn-orange{
     background-color: #ffffff;
     position: relative;
