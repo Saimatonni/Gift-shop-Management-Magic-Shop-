@@ -35,13 +35,20 @@
   }
   
   .payment-button {
-    margin-top: 20px;
+    
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    
+    
     border: none;
-    border-radius: 5px;
+    
     cursor: pointer;
+
+  background-color: #ffffff;
+
+  color: white;
+
+  border-radius: 5px;
+  margin-top: 50px;
   }
   
   .payment-button:disabled {
