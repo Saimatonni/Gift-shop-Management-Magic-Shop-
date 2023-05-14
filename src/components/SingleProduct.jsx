@@ -53,7 +53,7 @@ const SingleProduct = ({ item }) => {
                 </Link>
                 
                 <div class="card-body" >
-                    <h5 class="card-title">{item.title}</h5>
+                <Link to={`/product/${item.id}`}><h5 class="card-title">{item.title}</h5></Link>
                     <p class="card-text">{(item.description).substring(0, 70)}....<Link to={`/product/${item.id}`}>more</Link></p>
                     <button onClick={() => addtocart(item.id)} class="btn custom-btn-orange"><span>Add to Cart</span></button>
                 </div>

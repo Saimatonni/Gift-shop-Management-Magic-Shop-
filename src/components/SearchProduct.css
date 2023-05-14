@@ -1,0 +1,30 @@
+.search-box{
+    margin-bottom: 50px; 
+}
+
+.custom-btn-blue{
+    background-color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    color: white;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+}
+.custom-btn-blue:hover{
+    letter-spacing: .15em;
+    background-color: #205375;
+    box-shadow: 0 0 15px #205375 ;
+    color: #8fc0e1;
+}
+.custom-btn-blue::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: #112B3C ;
+}
+.custom-btn-blue span{
+    position: relative;
+    z-index: 1;
+}

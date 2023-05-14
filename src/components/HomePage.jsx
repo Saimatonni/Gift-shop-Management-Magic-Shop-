@@ -8,8 +8,6 @@ import './HomePage.css'
 import cloud_1_back from '../assests/cloud_1_back.png'
 import whale from '../assests/whale.png'
 import sparkles from '../assests/white-sparkle-png-transparent-29.png'
-import Footer from './Footer'
-import Wrapper from './Wrapper'
 import Slider from './Slider'
 import SearchProduct from './SearchProduct'
 
@@ -80,11 +78,14 @@ const HomePage = () => {
     return (
         <div className="container-fluid">
              
-             <div className={css.NightSky}> 
-             {/* <section class = "parallax">
+             {/* <div className={css.NightSky}> 
+             <section class = "parallax">
                 <img src={cloud_1_back} alt="cloud_1_back" id = "cloud_1_back" />
                 <img src={whale} alt="whale" id = "whale" style={{ transform: `translateX(${scrollY * -2}px)` }} />
-            </section>  */}
+            </section> 
+            </div> */}
+
+            <div className={css.NightSky}> 
             <SearchProduct/>
             <Slider/>
             </div>
@@ -123,7 +124,6 @@ const HomePage = () => {
                             }
                             
                             </div>
-                        
                         </div>
                     </div>
                 </div>
@@ -149,6 +149,9 @@ const HomePage = () => {
                 <img src={sparkles} />
                 <img src={sparkles} />
             </div>     
+         
+
+        
 
         </div>
     )

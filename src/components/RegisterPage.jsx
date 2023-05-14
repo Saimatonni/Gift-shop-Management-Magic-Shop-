@@ -13,10 +13,7 @@ const RegisterPage = () => {
   const registerButton = async () => {
     if (password !== password2) {
         alert("Password doesn't match try again !")
-    } 
-    else if (password.length < 6) {
-      alert("Password should be a minimum of 6 characters.");
-    }else {
+    } else {
         await Axios({
             method: "post",
             url: `${domain}/api/register/`,

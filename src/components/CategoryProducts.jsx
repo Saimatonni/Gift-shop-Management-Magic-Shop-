@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import SingleProduct from './SingleProduct'
 
-
 const CategoryProducts = () => {
   const { id } = useParams() 
   const [cataproduct, setCataproduct] = useState(null)

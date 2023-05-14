@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { domain } from "../env"
 import SingleProduct from './SingleProduct'
+import './SearchProduct.css'
 
 const SearchProduct = () => {
 
@@ -21,22 +22,22 @@ const SearchProduct = () => {
 
 
     return (
-        <div>
+        <div className="serchz" >
              <div className="text-center">
-            <div className='search-box f_flex mx-5' >
+                <div className='search-box f_flex mx-5 ' >
 
-                <i className='fa fa-search mx-2' ></i>
-                <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '10px', padding: '5px' }} />
-                <button onClick={handleSearch} style={{ backgroundColor: '#333', color: '#fff', borderRadius: '5px', padding: '5px' }}>Search</button>
-            </div>
-            <div className="row">
-                {products?.results.map((item, i) => (
-                    <div className="col-md-3" key={i}>
-                        <SingleProduct item={item} />
-                    </div>
-                ))}
-            </div>
-            </div>
+                    <i className='fa fa-search mx-2' ></i>
+                    <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search product...' style={{ backgroundColor: '#333', color: '#fff', borderRadius: '10px', padding: '5px' }} />
+                    <button onClick={handleSearch} className="search-link-bttn custom-btn-blue"><span>Search</span></button>
+                </div>
+                <div className="row">
+                    {products?.results.map((item, i) => (
+                        <div className="col-md-3" key={i}>
+                            <SingleProduct item={item} />
+                        </div>
+                    ))}
+                </div>
+             </div>
         </div>
     );
 }

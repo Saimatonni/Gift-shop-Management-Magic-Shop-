@@ -6,7 +6,10 @@ import { Link, useHistory } from 'react-router-dom'
 import SingleProduct from './SingleProduct'
 import { domain, header } from '../env'
 import { useGlobalState } from '../state/provider'
+import './ProductDetails.css'
+
 import sparkles from '../assests/white-sparkle-png-transparent-29.png'
+
 
 const ProductDetails = () => {
    const {id} = useParams()
@@ -64,22 +67,22 @@ const ProductDetails = () => {
    }
    
 
-   return (
+  return (
     <div className="container">
        {
         product !== null &&
         (
             <>
             <div className="row">
-                <img className="w-100" src={product?.image} alt="" />
+                <img className="w-100 pro-img" src={product?.image} alt="" />
                 <div className="col-md-7 p-2">
                     <h1>{product?.title}</h1>
                     <h2>Price: <del>{product?.marcket_price}TK.</del> {product?.selling_price}TK.</h2>
                 </div>
                 <div className="col-md-4 p-3">
-                <p onClick={() => addtocart(product?.id)} className="btn custom-btn-orange"><span>Add to Cart</span></p>
+                    <p onClick={() => addtocart(product?.id)} className="btn custom-btn-orange"><span>Add to Cart</span></p>
                  </div>
-                   <p>{product.description}</p>
+                   <p className='img-des'>{product.description}</p>
                </div>
             </>
         )

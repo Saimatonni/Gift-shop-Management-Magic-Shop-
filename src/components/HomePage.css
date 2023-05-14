@@ -110,7 +110,7 @@
         opacity: 1;
     }
     100%{
-        transform: translateY(-215vh);
+        transform: translateY(-400vh);
         opacity: 0;
     }
 }
@@ -193,8 +193,8 @@
     align-items: top left;
 } */
 .parallax img#whale{
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: contain;
     
     

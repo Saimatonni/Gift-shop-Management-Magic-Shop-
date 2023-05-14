@@ -126,7 +126,7 @@ const Cart = () => {
                     </table>
                     :
                     <div>
-                        <h1>Cart is empty!!!</h1>
+                        <h1>Thare is no Card Go home and add some Product</h1>
                     </div>
             }
             <div className="row">

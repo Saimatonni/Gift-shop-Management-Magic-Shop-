@@ -15,12 +15,6 @@ const Profilepage = () => {
    //console.log(image,"profile image chane");
  
   const userdataupdate = async () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
     await Axios({
       method: "post",
       url: `${domain}/api/userdataupdate/`,
