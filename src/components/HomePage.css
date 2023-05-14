@@ -1,3 +1,9 @@
+.cat_col{
+    position: relative;
+    margin: 10px;
+}
+
+
 
 .custom-btn-blue{
     background-color: #ffffff;
@@ -165,13 +171,13 @@
     pointer-events: none;
 }
 
-.parallax img#cloud_1_back{
+/* .parallax img#cloud_1_back{
     width: 100%;
     height: 100%;
     
     object-fit: contain;
     margin-top: 50px;
-}
+} */
 
 /* .parallax img#magic_hat{
     width: 300px;
@@ -192,14 +198,14 @@
     position: absolute;
     align-items: top left;
 } */
-.parallax img#whale{
+/* .parallax img#whale{
     width: 50%;
     height: 50%;
     object-fit: contain;
     
     
     
-}
+} */
 /* .parallax img#gift_box{
     width: 400px;
     height: 400px;

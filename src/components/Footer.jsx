@@ -1,5 +1,8 @@
 import React from "react"
 import "./Footer.css"
+import "./contacts"
+import "./CustomerCare"
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 const Footer = () => {
   return (
@@ -9,7 +12,7 @@ const Footer = () => {
           <div className='box'>
             <h5>Saima Akter, Tasfia Tabassum</h5>
             <p>CSE Undergraduate Student at University of Dhaka</p>
-            <div className='icon d_flex'>
+            {/* <div className='icon d_flex'>
               <div className='img d_flex'>
                 <i class='fa-brands fa-google-play'></i>
                 <span>Google Play</span>
@@ -18,11 +21,11 @@ const Footer = () => {
                 <i class='fa-brands fa-app-store-ios'></i>
                 <span>App Store</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='box'>
-            <h2>About Us</h2>
+            <Link to = "/AboutUs"><h2>About Us</h2></Link>
             <ul>
               <li>Careers</li>
               <li>Our Stores</li>
@@ -32,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='box'>
-            <h2>Customer Care</h2>
+          <Link to = "/CustomerCare"><h2>Customer Care</h2></Link>
             <ul>
               <li>Help Center </li>
               <li>How to Buy </li>
@@ -41,7 +44,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='box'>
-            <h2>Contact Us</h2>
+          <Link to = "/contact"><h2>Contact Us</h2></Link>
             <ul>
               <li>Dhaka, Bangladesh</li>
               <li>Email: abcd@gmail.com</li>

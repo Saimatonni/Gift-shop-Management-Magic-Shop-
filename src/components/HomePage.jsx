@@ -127,7 +127,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-2 mt-3">
+                <div className="col-md-2 mt-3 cat_col">
                     <h1>All Categories</h1>
                     {
                         categoris?.map((cata, i) => (

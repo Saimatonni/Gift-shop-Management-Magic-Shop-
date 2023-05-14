@@ -37,23 +37,6 @@ function PaymentPage({ amount, currency }) {
           <label>
             <input
               type="radio"
-              name="paymentMethod"
-             value="online"
-             checked={paymentMethod === 'online'}
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            Online Payment
-          </label>
-           {paymentMethod === 'online' && (
-            <div>
-              {/* <CardElement /> */}
-            </div>
-          )} 
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
              name="paymentMethod"
              value="cash-on-delivery"
              checked={paymentMethod === 'cash-on-delivery'}
@@ -62,7 +45,7 @@ function PaymentPage({ amount, currency }) {
             Cash on Delivery
           </label>
         </div>
-        <button type="submit" disabled={!paymentMethod}>
+        <button className='payment_bttn' type="submit" disabled={!paymentMethod}>
           Pay
         </button>
       </form>

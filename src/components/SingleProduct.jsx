@@ -42,6 +42,7 @@ const SingleProduct = ({ item }) => {
                 margin: '10px' ,
                 textAlign: 'center', 
                 
+                
                 border: '1px solid rgba(255, 255, 255, 0.3)',
                 background: 'rgba(255, 255, 255, 0.17)',
                 borderRadius: '16px',

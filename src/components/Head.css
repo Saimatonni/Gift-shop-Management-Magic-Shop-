@@ -1,0 +1,29 @@
+.head .need_help{
+    font-size: 15px;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+.left{
+    font-size: 20px;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+.fa-phone{
+    margin: 10px;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+.fa-envelope{
+    margin: 10px;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+.right{
+    font-size: 30px;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
