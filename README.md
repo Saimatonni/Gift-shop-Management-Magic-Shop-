@@ -62,7 +62,7 @@ npm install slick-carousel
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/orderdetails.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/service.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/footer.png" height="400" />
-<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/aboutus.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/about.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/contact.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/cutomercare.png" height="400" />
 
