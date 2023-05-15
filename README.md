@@ -33,7 +33,7 @@ npm install slick-carousel
 
 
 # Gift Shop Management(Magic Shop)
-....   Enable customers to browse and purchase products online.
+....   Enable customers to browse and purchase products online.<br\>
 ....   Allow customers to create accounts, view order history, and save preferences.
 ....   Provide secure and offline payment options.
 ....   Provide the facility to add products to cart
