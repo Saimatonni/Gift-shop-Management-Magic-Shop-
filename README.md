@@ -46,4 +46,24 @@ npm install slick-carousel
 # Features:
 
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/slide.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/product.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/details.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/details2.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/cate.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/category.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/serach.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/login.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/register.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/profile.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/cart.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/order.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/payment.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/oldorder.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/orderdetails.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/service.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/footer.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/aboutus.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/contact.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/customercare.png" height="400" />
+
 
