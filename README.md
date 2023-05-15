@@ -43,6 +43,7 @@ npm install slick-carousel
 
 ....   Provide regular updates, maintenance, and customer support.
 
+# Features:
 
-
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/slide.png" height="400" />
 
