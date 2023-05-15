@@ -30,3 +30,7 @@ npm install react-slick
 install slick-carousel for css and font :
 npm install slick-carousel
 ```
+
+
+
+
