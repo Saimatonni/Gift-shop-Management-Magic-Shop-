@@ -12,9 +12,15 @@ const Profilepage = () => {
   const [firstname, setFirstname] = useState(profile?.prouser.first_name)
   const [lasename, setLasename] = useState(profile?.prouser.last_name)
   const [email, setemail] = useState(profile?.prouser.email)
-   //console.log(image,"profile image chane");
- 
+  //console.log(image,"profile image chane");
+
   const userdataupdate = async () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
     await Axios({
       method: "post",
       url: `${domain}/api/userdataupdate/`,
@@ -39,24 +45,24 @@ const Profilepage = () => {
     const formdata = new FormData()
     formdata.append('image', image)
     await Axios({
-        method: "post",
-        url: `${domain}/api/updateprofile/`,
-        headers:header,
-        data: formdata
+      method: "post",
+      url: `${domain}/api/updateprofile/`,
+      headers: header,
+      data: formdata
     }).then(response => {
-         //console.log(response.data["message"]);
-        dispatch({
-            type: "ADD_RELOADPAGE_DATA",
-            reloadpage: response.data
-        })
-        alert(response.data["message"])
+      //console.log(response.data["message"]);
+      dispatch({
+        type: "ADD_RELOADPAGE_DATA",
+        reloadpage: response.data
+      })
+      alert(response.data["message"])
     })
 
-}
+  }
 
   return (
     <div className="container">
-      
+
 
       <div className='row'>
         <div className='media'>
@@ -88,15 +94,15 @@ const Profilepage = () => {
       </div>
 
       <div className="sparklePP">
-                <img src={sparkles} />
-                <img src={sparkles} />
-                <img src={sparkles} />
-                <img src={sparkles} />
-                <img src={sparkles} />
-                <img src={sparkles} />
-                <img src={sparkles} />
-            </div>
-            
+        <img src={sparkles} />
+        <img src={sparkles} />
+        <img src={sparkles} />
+        <img src={sparkles} />
+        <img src={sparkles} />
+        <img src={sparkles} />
+        <img src={sparkles} />
+      </div>
+
 
     </div>
   )

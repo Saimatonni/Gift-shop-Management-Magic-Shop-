@@ -4,7 +4,7 @@ import { domain } from "../env"
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import SingleProduct from './SingleProduct'
-import './CategoryProducts.css'
+// import './CategoryProducts.css'
 
 const CategoryProducts = () => {
   const { id } = useParams() 
@@ -35,7 +35,7 @@ const CategoryProducts = () => {
             ))
         }
     </div>
-</div>
+ </div>
   )
 }
 
