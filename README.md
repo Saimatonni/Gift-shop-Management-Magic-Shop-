@@ -51,7 +51,7 @@ npm install slick-carousel
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/details2.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/cate.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/category.png" height="400" />
-<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/serach.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/search.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/login.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/register.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/profile.png" height="400" />
@@ -64,6 +64,6 @@ npm install slick-carousel
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/footer.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/aboutus.png" height="400" />
 <img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/contact.png" height="400" />
-<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/customercare.png" height="400" />
+<img src="https://github.com/Saimatonni/Gift_shop_Management/blob/master/public/images/SS/cutomercare.png" height="400" />
 
 
