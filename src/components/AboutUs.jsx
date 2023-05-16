@@ -18,14 +18,14 @@ const AboutUs = () => {
             </div>
             <div className="left_text_container">
             <h2>Tasfia Tabassum</h2>
-            <p>3rd Year Computer Science Student of University of Dhaka.</p>
+            <p>3rd Year Computer Science Student at University of Dhaka.</p>
             </div>
         </div>
         <div className="section2">
             
             <div className="right_text_container">
             <h2>Saima Akter</h2>
-            <p>3rd Year Computer Science Student of University of Dhaka.</p>
+            <p>3rd Year Computer Science Student at University of Dhaka.</p>
             </div>
             <div className="right_image_container">
             <img src={image_right} alt="Right Image" />

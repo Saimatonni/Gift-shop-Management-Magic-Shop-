@@ -10,6 +10,8 @@
 .logo>img{
     width: 3rem;
     height: 2.5rem;
+    color: #e9edef;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 .logo>span{
     font-weight: 600;

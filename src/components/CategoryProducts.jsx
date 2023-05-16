@@ -35,7 +35,7 @@ const CategoryProducts = () => {
             ))
         }
     </div>
- </div>
+</div>
   )
 }
 

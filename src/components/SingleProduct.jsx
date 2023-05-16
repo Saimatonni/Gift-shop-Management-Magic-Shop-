@@ -6,7 +6,6 @@ import { useGlobalState } from '../state/provider'
 import './SingleProduct.css'
 import VanillaTilt from 'react-vanilla-tilt'
 
-
 const SingleProduct = ({ item }) => {
     const [{ profile }, dispatch] = useGlobalState()
 
@@ -38,10 +37,10 @@ const SingleProduct = ({ item }) => {
             maxGlare: 1
          }} 
                 style={{
-                width: '400px', 
-                height: '600px', 
+                width: '450px', 
+                height: '650px', 
                 margin: '10px' ,
-                // textAlign: 'center', 
+                textAlign: 'center', 
                 
                 
                 border: '1px solid rgba(255, 255, 255, 0.3)',

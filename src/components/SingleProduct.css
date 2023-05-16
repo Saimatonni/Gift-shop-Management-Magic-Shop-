@@ -1,8 +1,7 @@
 
-
 .Card {
-    width: 400px;
-    height: 600px;
+    width: 450px;
+    height: 650px;
     text-align: center;
     padding: 50px 35px;
     border: 1px solid rgba(255, 255, 255, 0.073);
@@ -11,6 +10,18 @@
     box-shadow: 0 4px 30px rgba(0, 0 , 0, 0.1);
     backdrop-filter: blur(.0 1px);
     
+}
+
+.card-title{
+    color: #205375;
+}
+
+.card-text{
+    color: #205375;
+}
+
+.card-footer{
+    color: #205375;
 }
 
 
@@ -40,14 +51,3 @@
     z-index: 1;
 }
 
-.card-title{
-    color: #205375;
-}
-
-.card-text{
-    color: #205375;
-}
-
-.card-footer{
-    color: #205375;
-}

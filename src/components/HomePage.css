@@ -1,7 +1,9 @@
-/* .cat_col{
+.cat_col{
+    /* position: relative;
+    margin: 10px; */
     position: relative;
-    margin: 10px;
-} */
+    margin: -10px 10px 10px 10px;
+}
 
 
 
