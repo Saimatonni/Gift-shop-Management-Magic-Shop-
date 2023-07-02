@@ -41,7 +41,7 @@ npm install slick-carousel
 
 ....   Provide the facility to add products to cart
 
-....   Provide regular updates, maintenance, and customer support.
+....   Provide regular updates, maintenance, and customer support. 
 
 # Features:
 
