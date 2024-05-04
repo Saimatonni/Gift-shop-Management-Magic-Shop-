@@ -3,7 +3,6 @@
 ```
 git clone
 python -m venv venv
-pip install -r requirements.txt
 .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
@@ -14,6 +13,8 @@ npm run build
 ```
 
 ```python
+python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver
 ```
 ```
